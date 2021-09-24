@@ -50,6 +50,13 @@ input {
   background-color: #fe024e;
 }
 
+.chekbox-login input,
+.chekbox-login label {
+  display: inline;
+  padding: 0;
+  margin-bottom: 20px;
+}
+
 h2,
 p {
   text-align: center;

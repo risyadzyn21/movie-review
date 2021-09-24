@@ -15,7 +15,7 @@ import {
   OverlayTrigger
 } from "react-bootstrap";
 
-function RegisterForm() {
+function LoginForm() {
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
@@ -34,10 +34,6 @@ function RegisterForm() {
 
           <h2><img src={MilanTVLogo} alt="MilanTVLogo" /> MilanTV</h2>
           <Form>
-            <Form.Group className="field fullname" controlId="formFullName">
-              <Form.Label>Full Name</Form.Label>
-              <Form.Control type="email" />
-            </Form.Group>
 
             <Form.Group className="field email" controlId="formEmail">
               <Form.Label>Email</Form.Label>
@@ -48,18 +44,28 @@ function RegisterForm() {
               <Form.Label>Password</Form.Label>
               <Form.Control type="password" />
             </Form.Group>
+
+            {['checkbox'].map((type) => (
+              <div key={`default-${type}`} className="chekbox-login">
+                <Form.Check
+                  type={type}
+                  id={`default-${type}`}
+                  label={'keep me logged in'}
+                />
+              </div>
+            ))}
+
             <Button className="signup-btn" variant="danger" type="submit">
-              Sign Up
+              Log In
             </Button>
           </Form>
-          <p>Already have an account? <a href='#'>Log in</a></p>
         </Modal.Body>
       </Modal>
     </>
   );
 }
 
-export default RegisterForm
+export default LoginForm
 
 // function RegisterForm() {
 //   return (
