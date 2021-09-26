@@ -72,9 +72,9 @@ h3 {
   text-align: left;
   overflow-wrap: break-word;
   word-wrap: break-word;
-  color: blue;
 }
 
 .genreInfo {
   font-size: 12px;
+  flex-grow: 3;
 }
