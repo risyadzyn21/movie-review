@@ -2,17 +2,9 @@ import React, { useState } from "react";
 import './RegisterForm.css'
 import MilanTVLogo from '../../MilanTVLogo.svg';
 import {
-  Navbar,
-  NavDropdown,
-  MenuItem,
-  NavItem,
-  Nav,
-  Popover,
-  Tooltip,
   Form,
   Button,
-  Modal,
-  OverlayTrigger
+  Modal
 } from "react-bootstrap";
 
 function RegisterForm() {
