@@ -32,3 +32,19 @@
     margin-right: 150px;
     margin-top: 3px;
 }
+
+.avatar {
+    display: flex;
+    float:right;
+    margin-right: 150px;
+    margin-top: 3px;
+}
+#dropdownAvatar {
+    vertical-align: middle;
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background-color:transparent !important;
+    border:none;
+}
+

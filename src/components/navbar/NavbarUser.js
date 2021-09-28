@@ -1,8 +1,8 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Navbar,Nav,Form,FormControl} from 'react-bootstrap';
+import { Navbar,Form,FormControl,Dropdown} from 'react-bootstrap';
 import styles from './navbar.module.css';
 
-function Navbars() {
+function NavbarUser() {
   return (
     <>
     <div className={styles.Navbar}>
@@ -31,8 +31,19 @@ function Navbars() {
                 aria-label="Search"
             />
             </Form>
-            <div className={styles.signInLink}>
-              <Nav.Link href="#action1">Sign in</Nav.Link>
+            <div className={styles.avatar}>
+                <Dropdown>
+                    <Dropdown.Toggle variant="secondary" id={styles.dropdownAvatar} >
+                    <img src="https://avatars.abstractapi.com/v1/?api_key=beb8da0430524a23bca220e902b59d20&name=Joko Corinthianz" alt="Joko Corinthianz" />
+                    </Dropdown.Toggle>
+                    <Dropdown.Menu>
+                        <Dropdown.Item>Joko Corinthianz</Dropdown.Item>
+                        <Dropdown.Item href="#/action-2">Profile</Dropdown.Item>
+                        <Dropdown.Item href="#/action-3">Settings</Dropdown.Item>
+                        <Dropdown.Item href="#/action-4">Help</Dropdown.Item>
+                        <Dropdown.Item href="#/action-5">Sign out</Dropdown.Item>
+                    </Dropdown.Menu>
+                    </Dropdown>
             </div>
         </Navbar>
     </div>
@@ -40,4 +51,4 @@ function Navbars() {
   );
 }
 
-export default Navbars
+export default NavbarUser;
