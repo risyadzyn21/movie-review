@@ -1,0 +1,43 @@
+.logo {
+  text-align: center;
+  font-weight: bold;
+}
+
+.logo img {
+  width: 40px;
+  height: auto;
+}
+
+.formContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.formControl {
+  background-color: #ece7e7;
+}
+
+.fullnameInput,
+.emailInput,
+.passwordInput {
+  margin-bottom: 20px;
+}
+
+.fullnameInput label,
+.emailInput label,
+.passwordInput label {
+  color: #ada6a6;
+  font-weight: bold;
+}
+
+.loginIf {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.loginIfBtn {
+  color: #fe024e;
+  font-weight: bold;
+  text-decoration: none;
+  cursor: pointer;
+}
