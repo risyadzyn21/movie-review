@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import RegisterFormCss from './RegisterForm.module.css'
 import './ModalForm.css'
-import MilanTVLogo from '../../MilanTVLogo.svg';
+import MilanTVLogo from '../../assets/MilanTVLogo.svg';
 import {
   Form,
   Button,
