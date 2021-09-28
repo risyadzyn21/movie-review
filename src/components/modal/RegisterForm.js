@@ -1,10 +1,11 @@
 import React, { useState } from "react";
-import './RegisterForm.css'
-import MilanTVLogo from '../../MilanTVLogo.svg';
+import RegisterFormCss from './RegisterForm.module.css'
+import './ModalForm.css'
+import MilanTVLogo from '../../assets/MilanTVLogo.svg';
 import {
   Form,
   Button,
-  Modal
+  Modal,
 } from "react-bootstrap";
 
 function RegisterForm() {
@@ -24,27 +25,32 @@ function RegisterForm() {
 
           {/* <Button className="close-btn" variant="light"> X </Button> */}
 
-          <h2><img src={MilanTVLogo} alt="MilanTVLogo" /> MilanTV</h2>
-          <Form>
-            <Form.Group className="field fullname" controlId="formFullName">
+          <h3 className={RegisterFormCss.logo}>
+            <img src={MilanTVLogo} alt="MilanTVLogo" /> MilanTV
+          </h3>
+
+          <Form className={RegisterFormCss.formContainer}>
+            <Form.Group className={RegisterFormCss.fullnameInput} controlId="formFullName">
               <Form.Label>Full Name</Form.Label>
-              <Form.Control type="email" />
+              <Form.Control className={RegisterFormCss.formControl} type="email" />
             </Form.Group>
 
-            <Form.Group className="field email" controlId="formEmail">
+            <Form.Group className={RegisterFormCss.emailInput} controlId="formEmail">
               <Form.Label>Email</Form.Label>
-              <Form.Control type="email" />
+              <Form.Control className={RegisterFormCss.formControl} type="email" />
             </Form.Group>
 
-            <Form.Group className="field password" controlId="formPassword">
+            <Form.Group className={RegisterFormCss.passwordInput} controlId="formPassword">
               <Form.Label>Password</Form.Label>
-              <Form.Control type="password" />
+              <Form.Control className={RegisterFormCss.formControl} type="password" />
             </Form.Group>
-            <Button className="signup-btn" variant="danger" type="submit">
+            <Button className={RegisterFormCss.signupBtn} variant="danger" type="submit">
               Sign Up
             </Button>
+            <p className={RegisterFormCss.loginIf}>Already have an account?
+              <span className={RegisterFormCss.loginIfBtn}>Log in</span></p>
           </Form>
-          <p>Already have an account? <a href='#'>Log in</a></p>
+
         </Modal.Body>
       </Modal>
     </>
@@ -53,12 +59,3 @@ function RegisterForm() {
 
 export default RegisterForm
 
-// function RegisterForm() {
-//   return (
-//     <>
-
-//     </>
-//   )
-// }
-
-// export default RegisterForm

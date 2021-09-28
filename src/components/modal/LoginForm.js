@@ -1,10 +1,11 @@
 import React, { useState } from "react";
-import './RegisterForm.css'
-import MilanTVLogo from '../../MilanTVLogo.svg';
+import LoginFormCss from './LoginForm.module.css'
+import './ModalForm.css'
+import MilanTVLogo from '../../assets/MilanTVLogo.svg';
 import {
   Form,
   Button,
-  Modal
+  Modal,
 } from "react-bootstrap";
 
 function LoginForm() {
@@ -24,32 +25,27 @@ function LoginForm() {
 
           {/* <Button className="close-btn" variant="light"> X </Button> */}
 
-          <h2><img src={MilanTVLogo} alt="MilanTVLogo" /> MilanTV</h2>
-          <Form>
+          <h3 className={LoginFormCss.logo}>
+            <img src={MilanTVLogo} alt="MilanTVLogo" /> MilanTV
+          </h3>
 
-            <Form.Group className="field email" controlId="formEmail">
+          <Form className={LoginFormCss.formContainer}>
+
+            <Form.Group className={LoginFormCss.emailInput} controlId="formEmail">
               <Form.Label>Email</Form.Label>
-              <Form.Control type="email" />
+              <Form.Control className={LoginFormCss.formControl} type="email" />
             </Form.Group>
 
-            <Form.Group className="field password" controlId="formPassword">
+            <Form.Group className={LoginFormCss.passwordInput} controlId="formPassword">
               <Form.Label>Password</Form.Label>
-              <Form.Control type="password" />
+              <Form.Control className={LoginFormCss.formControl} type="password" />
             </Form.Group>
 
-            {['checkbox'].map((type) => (
-              <div key={`default-${type}`} className="chekbox-login">
-                <Form.Check
-                  type={type}
-                  id={`default-${type}`}
-                  label={'keep me logged in'}
-                />
-              </div>
-            ))}
-
-            <Button className="signup-btn" variant="danger" type="submit">
+            <Button className={LoginFormCss.loginBtn} variant="danger" type="submit">
               Log In
             </Button>
+            <p className={LoginFormCss.signupIf}>Don’t have an account?
+              <span className={LoginFormCss.signupIfBtn}>Sign Up</span></p>
           </Form>
         </Modal.Body>
       </Modal>
@@ -58,13 +54,3 @@ function LoginForm() {
 }
 
 export default LoginForm
-
-// function RegisterForm() {
-//   return (
-//     <>
-
-//     </>
-//   )
-// }
-
-// export default RegisterForm
