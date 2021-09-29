@@ -14,11 +14,11 @@
   display: flex;
 }
 
-.filters li {
+/* .filters li {
   list-style: none;
-}
+} */
 
-.filters a {
+.filtersItem {
   padding: 10px 15px;
   margin-inline: 10px;
   border-radius: 20px;
@@ -28,12 +28,12 @@
   border: 2px solid white;
 }
 
-.filters a:hover:not(.active) {
+.filtersItem:hover:not(.active) {
   border: 2px solid #eb507f;
   color: #eb507f;
 }
 
-.filters li a.active {
+.active {
   background: #eb507f;
   color: white;
   border: 2px solid #eb507f;
