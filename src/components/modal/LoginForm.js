@@ -9,46 +9,36 @@ import {
 } from "react-bootstrap";
 
 function LoginForm() {
-  const [show, setShow] = useState(false);
 
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
 
   return (
     <>
-      <Button variant="primary" onClick={handleShow}>
-        Sign In
-      </Button>
 
-      <Modal show={show} onHide={handleClose}>
-        <Modal.Body>
+      {/* <Button className="close-btn" variant="light"> X </Button> */}
 
-          {/* <Button className="close-btn" variant="light"> X </Button> */}
+      <h3 className={LoginFormCss.logo}>
+        <img src={MilanTVLogo} alt="MilanTVLogo" /> MilanTV
+      </h3>
 
-          <h3 className={LoginFormCss.logo}>
-            <img src={MilanTVLogo} alt="MilanTVLogo" /> MilanTV
-          </h3>
+      <Form className={LoginFormCss.formContainer}>
 
-          <Form className={LoginFormCss.formContainer}>
+        <Form.Group className={LoginFormCss.emailInput} controlId="formEmail">
+          <Form.Label>Email</Form.Label>
+          <Form.Control className={LoginFormCss.formControl} type="email" />
+        </Form.Group>
 
-            <Form.Group className={LoginFormCss.emailInput} controlId="formEmail">
-              <Form.Label>Email</Form.Label>
-              <Form.Control className={LoginFormCss.formControl} type="email" />
-            </Form.Group>
+        <Form.Group className={LoginFormCss.passwordInput} controlId="formPassword">
+          <Form.Label>Password</Form.Label>
+          <Form.Control className={LoginFormCss.formControl} type="password" />
+        </Form.Group>
 
-            <Form.Group className={LoginFormCss.passwordInput} controlId="formPassword">
-              <Form.Label>Password</Form.Label>
-              <Form.Control className={LoginFormCss.formControl} type="password" />
-            </Form.Group>
+        <Button className={LoginFormCss.loginBtn} variant="danger" type="submit">
+          Log In
+        </Button>
+        <p className={LoginFormCss.signupIf}>Don’t have an account?
+          <span className={LoginFormCss.signupIfBtn}>Sign Up</span></p>
+      </Form>
 
-            <Button className={LoginFormCss.loginBtn} variant="danger" type="submit">
-              Log In
-            </Button>
-            <p className={LoginFormCss.signupIf}>Don’t have an account?
-              <span className={LoginFormCss.signupIfBtn}>Sign Up</span></p>
-          </Form>
-        </Modal.Body>
-      </Modal>
     </>
   );
 }
