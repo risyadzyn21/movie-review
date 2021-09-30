@@ -12,6 +12,8 @@
 
 .filters {
   display: flex;
+  width: 1300px;
+  flex-wrap: wrap;
 }
 
 /* .filters li {

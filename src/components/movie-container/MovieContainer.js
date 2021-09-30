@@ -121,26 +121,26 @@ function MovieContainer() {
   )
 }
 
-export function TabContainer(props) {
-  const param = useParams()
+// export function TabContainer(props) {
+//   const param = useParams()
 
-  // useEffect(() => {
-  //   MovieDB()
-  //     .then((res) => console.log('response', res.data.data.docs));
-  // }, []);
+// useEffect(() => {
+//   MovieDB()
+//     .then((res) => console.log('response', res.data.data.docs));
+// }, []);
 
-  // useEffect(() => {
-  //   props.handleFilter(param)
-  // }, [param])
+// useEffect(() => {
+//   props.handleFilter(param)
+// }, [param])
 
-  console.log('props', props)
+//   console.log('props', props)
 
-  return (
-    <>
-      <div>{props.children}</div>
-    </>
-  )
-}
+//   return (
+//     <>
+//       <div>{props.children}</div>
+//     </>
+//   )
+// }
 
 export default MovieContainer
 
