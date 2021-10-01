@@ -36,3 +36,47 @@
     top: 40px;
     left: 10px;
 }
+
+.ratingMovie {
+    display:flex;
+    float: left;
+    margin-top:-190px;
+    margin-left: 15px;
+    gap: 5px;
+}
+
+.spanRating {
+    margin-top: 10px;
+    color: white;
+    text-align: center;
+    justify-content: center;
+}
+
+.synopsis {
+    display: flex;
+    flex-direction: column;
+    color: white;
+    text-align: left;
+    margin-top: -150px;
+    margin-left: 15px;
+    z-index: 1;
+    max-width: 50%;
+}
+
+.buttonTrailerWatchlist {
+    display: flex;
+    gap:10px;
+    margin-left: 15px;
+}
+
+.buttonTrailerWatchlist .buttonTrailer {
+    background-color:#FE024E;
+}
+
+.buttonTrailerWatchlist .buttonTrailer:active {
+    background-color: salmon;
+}
+
+.buttonTrailerWatchlist .buttonTrailer:after {
+    background-color: salmon;
+}

@@ -38,7 +38,7 @@ function Footer() {
                 <ul className={styles.footer3Wrapper}>
                     <li>Download</li>
                     <li className={styles.downloadImage}>
-                        <span  id={styles.googleLogo}><img src={googlePlayLogo} alt="Google Play Logo" /> </span> 
+                        <span id={styles.googleLogo}><img src={googlePlayLogo} alt="Google Play Logo" /> </span> 
                         <span><img src={appStoreLogo} alt="Apple Store Logo" /> </span> 
                     </li>
                     <li className={styles.socialMediaText}>Social media</li>

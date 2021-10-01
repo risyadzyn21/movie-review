@@ -1,0 +1,35 @@
+.reviewPage {
+    float: left;
+    gap:5px;
+    margin: 0 auto;
+    margin-left: 0;
+    justify-content: left;
+}
+
+.userName {
+    margin: 0 auto;
+    margin-top: 20px;
+}
+
+.commentInput {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    float: left;
+}
+
+.commentInput__wrapper {
+    display: flex;
+    flex-direction: row;
+    padding-left: 60px;
+    margin-top: 10px;
+}
+
+.commentInput__starRating {
+    display: flex;
+    margin-left: 60px;
+}
+
+.commentInput__textField {
+    width: 500px;
+}
