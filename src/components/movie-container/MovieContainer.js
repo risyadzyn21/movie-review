@@ -1,9 +1,8 @@
 import MovieContainerCss from './MovieContainer.module.css'
-// import './MovieContainer.css'
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Link, NavLink, Route, useParams, useLocation } from 'react-router-dom';
 import { MovieDB, MovieGenreDB } from '../../services';
-import Switch from 'react-bootstrap/esm/Switch';
+import { Spinner } from 'react-bootstrap'
 
 function MovieContainer() {
 
@@ -33,13 +32,46 @@ function MovieContainer() {
       .then((res) => setGenres(['All'].concat(res.data.data)))
   }, [])
 
-  // const handleFilter = (filter) => {
-  //   console.log('filternya adalah', filter)
-  // }
 
-  if (isLoading) return <div>Loading...</div>
+  if (isLoading) return <div><Spinner animation="border" role="status">
+    <span className="visually-hidden"></span>
+  </Spinner>Loading...</div>
+
   return (
     <>
+      <div className={MovieContainerCss.filterContainer}>
+        <h3>Browse by category</h3>
+        <div className={MovieContainerCss.filters}>
+          {genres.map(genre => (
+            <button
+              key={genre}
+              onClick={() => setActiveFilter(genre)}
+              className={`${MovieContainerCss.filtersItem} ${genre === activeFilter ? MovieContainerCss.active : ''}`}>
+              {genre}
+            </button>
+          ))}
+        </div>
+      </div>
+
+
+
+      <div className={MovieContainerCss.movieCollection}>
+        {movies.map((movie) => {
+          return (
+            <Link to={`/movie-detail/${movie._id}`} key={movie._id} className={MovieContainerCss.movieBox}>
+              <img
+                src={`https://image.tmdb.org/t/p/original${movie.poster}`}
+                alt={movie.title}
+              />
+              <div className={MovieContainerCss.movieInfo}>
+                <p className={MovieContainerCss.genreInfo}>{`${movie.genres[0]}, ${movie.genres[1]}`}</p>
+                <p className={MovieContainerCss.titleInfo}>{movie.title}</p>
+              </div>
+            </Link>
+          );
+        })}
+      </div>
+
       {/* <div className={MovieContainerCss.filterContainer}>
         <h3>Browse by category</h3>
         <Router>
@@ -84,38 +116,7 @@ function MovieContainer() {
         </Router>
       </div> */}
 
-      <div className={MovieContainerCss.filterContainer}>
-        <h3>Browse by category</h3>
-        <div className={MovieContainerCss.filters}>
-          {genres.map(genre => (
-            <button
-              key={genre}
-              onClick={() => setActiveFilter(genre)}
-              className={`${MovieContainerCss.filtersItem} ${genre === activeFilter ? MovieContainerCss.active : ''}`}>
-              {genre}
-            </button>
-          ))}
-        </div>
-      </div>
 
-
-      {/* <TabContainer handleFilter={handleFilter}> */}
-      <div className={MovieContainerCss.movieCollection}>
-        {movies.map((movie) => {
-          return (
-            <Link to={`/movie-detail/${movie._id}`} key={movie._id} className={MovieContainerCss.movieBox}>
-              <img
-                src={`https://image.tmdb.org/t/p/original${movie.poster}`}
-                alt={movie.title}
-              />
-              <div className={MovieContainerCss.movieInfo}>
-                <p className={MovieContainerCss.genreInfo}>{`${movie.genres[0]}, ${movie.genres[1]}`}</p>
-                <p className={MovieContainerCss.titleInfo}>{movie.title}</p>
-              </div>
-            </Link>
-          );
-        })}
-      </div>
       {/* </TabContainer> */}
     </>
   )

@@ -10,21 +10,15 @@ import {
 
 
 
-const ModalContainer = () => {
-  const [show, setShow] = useState(false);
+const ModalContainer = ({ type, handleSwitch, show, handleClose }) => {
 
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+
 
   return (
     <div>
-      <Button variant="primary" onClick={handleShow}>
-        Sign In
-      </Button>
-
       <Modal show={show} onHide={handleClose}>
         <Modal.Body>
-          <RegisterForm />
+          {type == 'RegisterForm' ? <RegisterForm handleSwitch={handleSwitch} /> : <LoginForm handleSwitch={handleSwitch} />}
         </Modal.Body>
       </Modal>
 

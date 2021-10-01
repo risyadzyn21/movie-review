@@ -8,7 +8,7 @@ import {
   Modal,
 } from "react-bootstrap";
 
-function LoginForm() {
+function LoginForm({ handleSwitch }) {
 
 
   return (
@@ -36,7 +36,7 @@ function LoginForm() {
           Log In
         </Button>
         <p className={LoginFormCss.signupIf}>Don’t have an account?
-          <span className={LoginFormCss.signupIfBtn}>Sign Up</span></p>
+          <span onClick={() => handleSwitch('RegisterForm')} className={LoginFormCss.signupIfBtn}>Sign Up</span></p>
       </Form>
 
     </>

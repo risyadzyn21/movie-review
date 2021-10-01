@@ -10,7 +10,7 @@ import {
   Modal,
 } from "react-bootstrap";
 
-function RegisterForm() {
+function RegisterForm({ handleSwitch }) {
 
   return (
     <>
@@ -40,7 +40,7 @@ function RegisterForm() {
           Sign Up
         </Button>
         <p className={RegisterFormCss.loginIf}>Already have an account?
-          <span className={RegisterFormCss.loginIfBtn}>Log in</span>
+          <span onClick={() => handleSwitch('LoginForm')} className={RegisterFormCss.loginIfBtn}>Log in</span>
         </p>
       </Form>
 

@@ -2,7 +2,7 @@ import React from "react"
 import OverviewSectionCss from './OverviewSection.module.css'
 
 
-function OverviewSection() {
+function OverviewSection({ }) {
   return (
     <>
       <div className={OverviewSectionCss.synopsis}>

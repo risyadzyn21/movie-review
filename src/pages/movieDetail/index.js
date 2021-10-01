@@ -1,14 +1,15 @@
 import { useParams } from "react-router"
-
+import MovieDetailSectionBtn from "../../components/movie-detail-section-btn/MovieDetailSectionBtn"
 
 
 
 function MovieDetail() {
-  const { id } = useParams
+  const { id } = useParams()
 
   return (
     <>
-      Movie Detail
+      <MovieDetailSectionBtn />
+      Movie Detail: {id}
     </>
   )
 }
