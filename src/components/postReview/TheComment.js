@@ -1,8 +1,5 @@
 import React,{ useState } from "react";
-import styles from './postReview.module.css';
-import TextField from '@mui/material/TextField';
-import { Button } from "react-bootstrap";
-import SendIcon from '@mui/icons-material/Send';
+
 
 function AddComment() {
     const [comment,setComment] = useState([])
