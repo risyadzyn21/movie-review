@@ -25,8 +25,8 @@ function MovieCarousel() {
             alt="First slide"
           />
           <Carousel.Caption>
-            <h3>First slide label</h3>
-            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+            <h3>film 1</h3>
+            <p>tes tes</p>
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
