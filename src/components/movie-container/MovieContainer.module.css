@@ -4,7 +4,7 @@
 }
 
 .filterContainer h3 {
-  color: #ada6a6;
+  color: #7d7d7d;
   padding-left: 32px;
   margin-bottom: 20px;
   font-weight: bold;
@@ -26,7 +26,7 @@
   border-radius: 20px;
   background: none;
   border: none;
-  color: #c4c4c4;
+  color: #b5b5b5;
   border: 2px solid white;
 }
 
@@ -47,6 +47,8 @@
 .movieCollection {
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
   margin: 0 auto;
   gap: 20px;
   width: 1200px;
@@ -54,19 +56,31 @@
 }
 
 .movieBox img {
-  width: 200px;
+  width: 210px;
 }
 
 .movieBox {
-  cursor: pointer;
-  max-width: 200px;
+  max-width: 210px;
   flex-wrap: wrap;
-  margin: 0 auto;
+  margin: 5px;
+}
+
+.movieBox:hover {
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  text-decoration: none;
+}
+
+.movieBox:hover .titleInfo {
+  color: #eb507f;
+  font-size: 18px;
 }
 
 .movieInfo {
   display: flex;
   flex-direction: column;
+  height: 100px;
 }
 
 .genreInfo {
@@ -77,11 +91,12 @@
 }
 
 .titleInfo {
-  display: flex;
+  display: block;
+  color: #7d7d7d;
   font-size: 17px;
   font-weight: bold;
-  align-items: flex-start;
-  text-align: left;
   overflow-wrap: break-word;
   word-wrap: break-word;
+  text-align: center;
+  text-decoration: none;
 }

@@ -1,18 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap");
 
 * {
-    font-family: 'Roboto', sans-serif;
-    max-width: 100%; 
+  font-family: "Roboto", sans-serif;
+  max-width: 100%;
 }
 
 .bodyMovieInfo {
-    position: relative;
-    width:100vw;
-    
-    
+  position: relative;
+  width: 100vw;
 
-
-    /* background-repeat:no-repeat ;
+  /* background-repeat:no-repeat ;
     object-fit: cover;
     background-size: 100% auto;
     height: 300px;
@@ -21,18 +18,19 @@
 }
 
 .bodyMovieInfo img {
-    width: 100%;
-    height: auto;
-    max-height:300px;
-    filter: brightness(50%);
-    object-fit: cover;
-    object-position:top;
+  width: 100%;
+  height: auto;
+  max-height: 650px;
+  filter: brightness(20%);
+  object-fit: cover;
+  object-position: center;
 }
 
-.movieName p{
-    position: absolute;
-    color: white;
-    font-size: 50px;
-    top: 40px;
-    left: 10px;
+.movieName p {
+  position: absolute;
+  color: white;
+  font-weight: bold;
+  font-size: 80px;
+  top: 180px;
+  left: 10px;
 }
