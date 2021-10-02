@@ -16,7 +16,8 @@ function CastingSection() {
 
   return (
     <>
-      <div className={CastSectionCss.castCollection}>
+      <h3> Cast Section</h3>
+      {/* <div className={CastSectionCss.castCollection}>
         {cast.map((character) => {
           return (
             <div key={character.id} className={CastSectionCss.characterBox}>
@@ -30,7 +31,7 @@ function CastingSection() {
             </div>
           );
         })}
-      </div>
+      </div> */}
     </>
   )
 }
