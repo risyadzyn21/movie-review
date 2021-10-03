@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { MovieDB } from '../../services';
 
 
-function CastingSection() {
+function CastSection() {
   const [cast, setCast] = useState([])
 
 
@@ -36,4 +36,4 @@ function CastingSection() {
   )
 }
 
-export default CastingSection
+export default CastSection
