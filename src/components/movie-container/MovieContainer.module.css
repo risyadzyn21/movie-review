@@ -1,18 +1,19 @@
 /* Filter Section*/
 .filterContainer {
   margin: 50px auto 50px 150px;
+  width: 1200px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 .filterContainer h3 {
   color: #7d7d7d;
-  padding-left: 32px;
   margin-bottom: 20px;
   font-weight: bold;
 }
 
 .filters {
   display: flex;
-  width: 1300px;
   flex-wrap: wrap;
 }
 
@@ -21,18 +22,21 @@
 } */
 
 .filtersItem {
-  padding: 10px 15px;
-  margin-inline: 10px;
+  padding: 5px 15px;
+  margin-right: 10px;
+  margin-bottom: 10px;
   border-radius: 20px;
   background: none;
   border: none;
   color: #b5b5b5;
-  border: 2px solid white;
+  border: 2px solid #b5b5b5;
 }
 
 .filtersItem:hover:not(.active) {
   border: 2px solid #eb507f;
   color: #eb507f;
+  transform: scale(1.05);
+  transition: all 0.5s ease;
 }
 
 .active {
@@ -47,7 +51,6 @@
 .movieCollection {
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
   justify-content: center;
   margin: 0 auto;
   gap: 20px;
@@ -63,24 +66,26 @@
   max-width: 210px;
   flex-wrap: wrap;
   margin: 5px;
+  transition: all 0.5s ease;
 }
 
 .movieBox:hover {
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
-    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
-    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px -12px 30px,
+    rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px;
   text-decoration: none;
+  transform: scale(1.05);
 }
 
 .movieBox:hover .titleInfo {
   color: #eb507f;
-  font-size: 18px;
+  transform: scale(1.05);
 }
 
 .movieInfo {
   display: flex;
   flex-direction: column;
-  height: 100px;
+  text-align: center;
+  padding: 10px;
 }
 
 .genreInfo {
@@ -97,6 +102,6 @@
   font-weight: bold;
   overflow-wrap: break-word;
   word-wrap: break-word;
-  text-align: center;
   text-decoration: none;
+  transition: all 0.5s ease;
 }

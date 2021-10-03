@@ -8,7 +8,7 @@
   border: 2px solid white;
 }
 
-.nav-tab .nav-link:hover:not(.nav-link.active) {
+.nav-tabs .nav-link:hover:not(.active) {
   border: 2px solid #eb507f;
   color: #eb507f;
 }
