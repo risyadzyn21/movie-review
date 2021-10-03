@@ -26,8 +26,7 @@ function MovieDetail() {
   return (
     <>
       <MovieInfo bannerId={id} />
-      <MovieDetailSectionBtn />
-      Movie Detail: {id}
+      <MovieDetailSectionBtn movieId={id} />
     </>
   )
 }
