@@ -2,8 +2,7 @@ import React, { useState } from "react";
 import TextField from "@material-ui/core/TextField";
 import useInputState from "./useInputState";
 import styles from "./ReviewSection.module.css";
-// import { FaStar } from "react-icons/fa";
-import Rating from '@mui/material/Rating';
+import { FaStar } from "@react-icons/all-files/fa/FaStar";
 import axios from "axios";
 
 const TodoForm = ({ saveTodo }) => {
@@ -11,7 +10,7 @@ const TodoForm = ({ saveTodo }) => {
   const [rating, setRating] = useState(null);
   const [hover, setHover] = useState(null);
   const token =
-        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG5AZ21haWwuY29tIiwiaXNBZG1pbiI6ZmFsc2UsImlkIjoyMiwiaWF0IjoxNjMyOTMzOTg0LCJleHAiOjE2MzI5Mzc1ODR9.Ky-FIrNLbh50HpmaSLRZgK1hymRrkfwjr6wIqoUcm3U"
+        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG5AZ21haWwuY29tIiwiaXNBZG1pbiI6ZmFsc2UsImlkIjoyMiwiaWF0IjoxNjMyOTMzOTg0LCJleHAiOjE2MzI5Mzc1ODR9.Ky-FIrNLbh50HpmaSLRZgK1hymRrkfwjr6wIqoUcm3U";
         // "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI1ZTRlNjgzOWUzZjJhNmY4NTk5YTZhZTciLCJpYXQiOjE1ODIxOTY3OTN9.M1g9J-OnZ0t83xiIvlaDFYX--JwA5IFWQlNzk5wzjIY"
     // "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG5AZ21haWwuY29tIiwiaXNBZG1pbiI6ZmFsc2UsImlkIjoyMiwiaWF0IjoxNjMyOTMzOTg0LCJleHAiOjE2MzI5Mzc1ODR9.Ky-FIrNLbh50HpmaSLRZgK1hymRrkfwjr6wIqoUcm3U";
 
@@ -30,6 +29,7 @@ const TodoForm = ({ saveTodo }) => {
         comment: value
       },
     });
+    
   };
   // (event) => {
   //   event.preventDefault();
@@ -65,7 +65,7 @@ const TodoForm = ({ saveTodo }) => {
                   value={ratingValue}
                   onClick={() => setRating(ratingValue)}
                 />
-                <Rating
+                <FaStar
                   className={styles.star}
                   color={
                     ratingValue <= (hover || rating) ? "#ffc107" : "e4e5e9"

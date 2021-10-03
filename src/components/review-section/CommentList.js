@@ -4,7 +4,7 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
 import Avatar from '@mui/material/Avatar';
 import styles from './ReviewSection.module.css';
-import Rating from '@mui/material/Rating';
+import { FaStar } from "@react-icons/all-files/fa/FaStar";
 
 const TodoList = ({ todos }) => (
   <List>
@@ -16,7 +16,7 @@ const TodoList = ({ todos }) => (
         <div className={styles.commentWrapper}>
           <p>Username</p>
           <div className={styles.ratingStarList}>
-              <Rating 
+              <FaStar 
                 className={styles.starList} 
                 color={ratingValue === {ratingValue}? "#ffc107":"e4e5e9"}
                 size={15} 

@@ -1,23 +1,20 @@
 import React from "react";
-import ReactDOM from "react-dom";
 import Typography from "@material-ui/core/Typography";
-import TodoForm from "./commentForm";
+import TodoForm from "./CommentForm";
 import TodoList from "./CommentList";
 import useTodoState from "./useCommentState";
-import { StylesContext } from "@material-ui/styles";
-import styles from './ReviewSection.module.css';
-
+import styles from "./ReviewSection.module.css";
 
 const ReviewSection = ({ movieId }) => {
-
   const { todos, addTodo } = useTodoState([]);
-  
+
   return (
+      // <div></div>
     <div className={styles.app}>
       <div className={styles.reviewTitle}>
-      <Typography variant="h6" component="h5">
-        Reviews
-      </Typography>
+        <Typography variant="h6" component="h5">
+          Reviews
+        </Typography>
       </div>
 
       <TodoList todos={todos} />
@@ -39,4 +36,3 @@ const ReviewSection = ({ movieId }) => {
 // ReactDOM.render(<Apps />, rootElement);
 
 export default ReviewSection;
-
