@@ -17,45 +17,47 @@ function MovieCarousel() {
 
   return (
     <>
-      <Carousel className='carouselContainer'>
-        <Carousel.Item>
-          <img
-            className="d-block w-100"
-            src="https://www.teahub.io/photos/full/53-532602_best-desktop-background-hd-anime-anime-wallpapers-hd.jpg"
-            alt="First slide"
-          />
-          <Carousel.Caption>
-            <h3>film 1</h3>
-            <p>tes tes</p>
-          </Carousel.Caption>
-        </Carousel.Item>
-        <Carousel.Item>
-          <img
-            className="d-block w-100"
-            src="https://wallpaperaccess.com/full/44729.jpg"
-            alt="Second slide"
-          />
+      <div className='carouselContainer'>
+        <Carousel >
+          <Carousel.Item>
+            <img
+              className="d-block w-100"
+              src="https://www.teahub.io/photos/full/53-532602_best-desktop-background-hd-anime-anime-wallpapers-hd.jpg"
+              alt="First slide"
+            />
+            <Carousel.Caption>
+              <h3>film 1</h3>
+              <p>tes tes</p>
+            </Carousel.Caption>
+          </Carousel.Item>
+          <Carousel.Item>
+            <img
+              className="d-block w-100"
+              src="https://wallpaperaccess.com/full/44729.jpg"
+              alt="Second slide"
+            />
 
-          <Carousel.Caption>
-            <h3>Second slide label</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-          </Carousel.Caption>
-        </Carousel.Item>
-        <Carousel.Item>
-          <img
-            className="d-block w-100"
-            src="https://i.pinimg.com/originals/1e/86/65/1e8665c76382762185653f97c9e05037.jpg"
-            alt="Third slide"
-          />
+            <Carousel.Caption>
+              <h3>Second slide label</h3>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </Carousel.Caption>
+          </Carousel.Item>
+          <Carousel.Item>
+            <img
+              className="d-block w-100"
+              src="https://i.pinimg.com/originals/1e/86/65/1e8665c76382762185653f97c9e05037.jpg"
+              alt="Third slide"
+            />
 
-          <Carousel.Caption>
-            <h3>Third slide label</h3>
-            <p>
-              Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-            </p>
-          </Carousel.Caption>
-        </Carousel.Item>
-      </Carousel>
+            <Carousel.Caption>
+              <h3>Third slide label</h3>
+              <p>
+                Praesent commodo cursus magna, vel scelerisque nisl consectetur.
+              </p>
+            </Carousel.Caption>
+          </Carousel.Item>
+        </Carousel>
+      </div>
       {/* <Carousel>
         <Carousel.Item>
         <div className={MovieCarouselCss.movieCollection}>
