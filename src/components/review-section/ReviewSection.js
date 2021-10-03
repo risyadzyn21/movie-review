@@ -5,7 +5,7 @@ const ReviewSection = ({ movieId }) => {
 
   return (
     <div>
-
+      Ini Review Section
     </div>
   )
 }

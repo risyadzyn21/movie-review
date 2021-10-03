@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import { BrowserRouter as Router, Link, NavLink } from 'react-router-dom';
 import { Tabs, Tab } from "react-bootstrap";
-import './MovieDetail.css'
+import './MovieDetailSectionBtn.css'
 import SectionButtonCss from './MovieDetailSectionBtn.module.css'
 import OverviewSection from '../overview-section/OverviewSection'
 import CastSection from "../cast-section/CastSection";
