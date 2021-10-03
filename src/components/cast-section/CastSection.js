@@ -1,22 +1,24 @@
 import CastSectionCss from './CastSection.module.css'
 import React, { useState, useEffect } from 'react';
-import { MovieDB } from '../../services';
+import { MovieDBId } from '../../services';
 
 
-function CastingSection() {
+function CastSection({ movieId }) {
   const [cast, setCast] = useState([])
 
 
   useEffect(() => {
-    MovieDB()
-      .then((res) => setCast(res.data.data.docs.casts));
-    console.log(cast)
-  }, []);
+    MovieDBId(movieId)
+      .then((res) => {
+        setCast(res.data.data.casts)
+      })
+  }, [])
 
 
   return (
     <>
-      <div className={CastSectionCss.castCollection}>
+      <h3> Cast Section</h3>
+      <div className={CastSectionCss.characterCollection}>
         {cast.map((character) => {
           return (
             <div key={character.id} className={CastSectionCss.characterBox}>
@@ -35,4 +37,4 @@ function CastingSection() {
   )
 }
 
-export default CastingSection
+export default CastSection

@@ -1,0 +1,11 @@
+.carouselContainer {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("https://static.tildacdn.com/tild3835-3036-4738-a536-373831396234/v748-toon-131.jpg");
+  background-repeat: no-repeat;
+  background-size: auto;
+}
+
+.carouselContainer img {
+  max-height: 700px;
+  object-fit: contain;
+}
