@@ -6,6 +6,7 @@
   border: none;
   color: #b5b5b5;
   border: 2px solid white;
+  margin-top:110px;
 }
 
 .nav-tabs .nav-link:hover:not(.active) {
