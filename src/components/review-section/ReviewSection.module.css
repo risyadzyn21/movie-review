@@ -1,0 +1,34 @@
+.app {
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+}
+.reviewTitle {
+    text-align: left;
+    font-size: 200px;
+}
+
+.commentWrapper {
+    margin-left: 20px;
+}
+
+.avatarReview {
+    display: flex;
+    margin-top:8px;
+}
+
+.textField {
+    display: flex;
+    float: left;
+    margin-left:20px;
+    width: 300px;
+}
+
+input[type="radio"] {
+    display: none;
+}
+
+.ratingStar {
+    display: flex;
+    flex-direction: row;
+}

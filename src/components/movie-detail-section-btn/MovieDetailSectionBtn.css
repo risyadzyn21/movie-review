@@ -4,8 +4,9 @@
   border-radius: 20px;
   background: none;
   border: none;
-  color: #b5b5b5;
+  color: #7d7d7d;
   border: 2px solid white;
+  margin-top:110px;
 }
 
 .nav-tabs .nav-link:hover:not(.active) {

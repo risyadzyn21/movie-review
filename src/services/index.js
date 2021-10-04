@@ -1,5 +1,9 @@
 import axios from "axios";
 
+export const getAllComment = () => {
+  return axios.get('https://movieapp-glints.herokuapp.com/api/v1/reviews/share/22')
+}
+
 export function MovieDB(genre) {
 
   return axios({
@@ -8,7 +12,7 @@ export function MovieDB(genre) {
     params: {
 
       limit: 15,
-      genre: genre == 'All' ? undefined : genre
+      genre: genre === 'All' ? undefined : genre
     }
   })
 }
@@ -28,3 +32,19 @@ export function MovieGenreDB() {
     url: 'https://notflixtv.herokuapp.com/api/v1/movies/genres'
   })
 }
+
+export const Login = (email, password) => {
+  const data = {
+    email,
+    password
+  }
+  return axios({
+    method: 'POST',
+    url: 'https://movieapp-glints.herokuapp.com/api/v1/users/signin',
+    headers: {
+      'content-type': 'application/json'
+    },
+    data: JSON.stringify(data)
+  })
+}
+
