@@ -6,14 +6,7 @@ import thunk from 'redux-thunk'
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { Provider } from 'react-redux';
-import { createStore } from 'redux';
-import rootReducer from './redux/reducers';
 
-const store = createStore(
-  rootReducer, /* preloadedState, */
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__() // agar reduce terhubung sama redux
-);
 
 import userReducer from './redux/reducers'
 
