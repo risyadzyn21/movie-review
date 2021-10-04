@@ -9,7 +9,7 @@ function OverviewSection({ movieId }) {
   useEffect(() => {
     MovieDBId(movieId)
       .then((res) => {
-        setOverview(res.data.data)
+        setOverview(res.data.data.movie)
       })
   }, [])
 
@@ -24,10 +24,10 @@ function OverviewSection({ movieId }) {
 
       <div className={OverviewSectionCss.movieInfo}>
         <h3>Movie Info</h3>
-        <p>Release Date:</p>
-        <p>Director:</p>
-        <p>Featured Song:</p>
-        <p>Budget:</p>
+        <p>Release Date :      {overview?.release_date}</p>
+        <p>Director :      {overview?.director}</p>
+        <p>Featured Song :      {overview?.featured_song}</p>
+        <p>Budget :      {overview?.budget}</p>
       </div>
     </>
   )

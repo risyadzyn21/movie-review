@@ -1,3 +1,7 @@
+.wrapper {
+  min-height: 1000px;
+}
+
 /* Filter Section*/
 .filterContainer {
   margin: 50px auto 50px 150px;

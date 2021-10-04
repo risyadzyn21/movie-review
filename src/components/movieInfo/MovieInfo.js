@@ -3,7 +3,6 @@ import React, { useState, useEffect } from "react";
 import onePieceBackground from "./onePiece.jpeg";
 import StarRatingShow from "./StarRatingShow";
 import { Button } from "react-bootstrap";
-
 import { MovieDBId } from "../../services";
 
 function MovieInfo({ bannerId }) {
@@ -11,28 +10,27 @@ function MovieInfo({ bannerId }) {
 
   useEffect(() => {
     MovieDBId(bannerId).then((res) => {
-      setBanners(res.data.data);
+      setBanners(res.data.data.movie);
     });
   }, []);
 
   return (
     <>
-      <div></div>
       <div className={styles.bodyMovieInfo}>
-        <div key={banners?._id}>
+        <div key={banners?.id}>
           <img
-            src={`https://image.tmdb.org/t/p/original${banners?.poster}`}
+            src={banners?.poster}
             alt={banners?.title}
           />
           <div className={styles.movieName}>
             <h2>{banners?.title} </h2>
             <p>{banners?.synopsis}</p>
-            <div className={styles.button}>
-              <a href={banners?.trailer}>
-                <Button variant="outline-warning">Watch Trailer</Button>{" "}
-              </a>
-              <Button variant="outline-danger">Add to Watchlist</Button>{" "}
-            </div>
+          </div>
+          <div className={styles.buttonContainer}>
+            <a href={banners?.trailer}>
+              <Button variant="danger" className={styles.trailerBtn} >Watch Trailer</Button>{" "}
+            </a>
+            <Button variant="outline-light" disabled={true} >Add to Watchlist</Button>{" "}
           </div>
         </div>
       </div>
