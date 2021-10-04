@@ -1,6 +1,6 @@
 import React from "react";
 import Typography from "@material-ui/core/Typography";
-import TodoForm from "./CommentForm";
+
 import TodoList from "./CommentList";
 import useTodoState from "./useCommentState";
 import styles from "./ReviewSection.module.css";
@@ -19,7 +19,7 @@ const ReviewSection = ({ movieId }) => {
 
       <TodoList todos={todos} />
 
-      <TodoForm
+      {/* <TodoForm
         saveTodo={(todoText) => {
           const trimmedText = todoText.trim();
 
@@ -27,7 +27,7 @@ const ReviewSection = ({ movieId }) => {
             addTodo(trimmedText);
           }
         }}
-      />
+      /> */}
     </div>
   );
 };

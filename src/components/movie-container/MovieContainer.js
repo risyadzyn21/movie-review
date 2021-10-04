@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Link, NavLink, Route, useParams, useLocation } from 'react-router-dom';
 import { MovieDB, MovieGenreDB, MovieDBGenre } from '../../services';
 import { Spinner } from 'react-bootstrap'
+import Pagination1 from "../../components/pagination/Pagination"
 
 function MovieContainer() {
 
@@ -11,9 +12,10 @@ function MovieContainer() {
   const [genres, setGenres] = useState([])
   const [isLoading, setIsLoading] = useState(false)
   const [activeFilter, setActiveFilter] = useState('All')
+  const [meta, setMeta] = useState({})
 
 
-
+  
   // Get All Movies by Genre
 
   useEffect(() => {
@@ -21,7 +23,17 @@ function MovieContainer() {
     setIsLoading(true)
     if (activeFilter === 'All') {
       MovieDB()
-        .then((res) => setMovies(res.data.data.movies))
+        .then((res) => {
+          setMovies(res.data.data.movies)
+          console.log("isinya", res.data)
+          setMeta({
+            currentPage: res.data.currentPage,
+            previousPage: res.data.previousPage,
+            nextPage: res.data.nextPage,
+            totalPage: res.data.totalPage
+          })
+
+        })
       setIsLoading(false)
     } else {
       MovieDBGenre(activeFilter)
@@ -34,7 +46,7 @@ function MovieContainer() {
 
   }, [activeFilter]);
 
-
+console.log("isi meta", meta)
 
   // Get All Genres Filter
 
@@ -89,6 +101,7 @@ function MovieContainer() {
             );
           })}
         </div>
+        <Pagination1 meta={meta} />
       </div>
     </>
   )
