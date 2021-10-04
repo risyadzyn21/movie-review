@@ -1,0 +1,142 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap");
+
+* {
+  font-family: "Roboto", sans-serif;
+  max-width: 100%;
+}
+
+.homePage {
+  min-height: 100%;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  grid-template-columns: 100%;
+}
+
+.footerGridContainer {
+  display: grid;
+  grid-column-gap: 50px;
+  grid-template-columns: auto auto auto;
+  background-color: black;
+  color: white;
+}
+
+.footer1Wrapper {
+  float: left;
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  width: 100%;
+  margin: 0;
+  margin-top: 20%;
+  margin-left: 10%;
+}
+
+.milanTVLogo {
+  display: flex;
+  align-items: center;
+  float: left;
+  font-size: 30px;
+}
+
+.milanTVLogo img {
+  width: 64px;
+  height: 64px;
+}
+
+.milanTVLogo span {
+  padding-left: 5px;
+}
+
+.tagline {
+  float: left;
+}
+.footer2Wrapper {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  list-style: none;
+  font-size: 20px;
+  margin: 0;
+  margin-top: 60px;
+}
+
+.footer3Wrapper {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  list-style: none;
+  margin: 0;
+  margin-top: 60px;
+  font-size: 20px;
+}
+
+.downloadImage {
+  display: flex;
+  flex-direction: row;
+  margin: 0;
+}
+
+.downloadImage span {
+  margin: 0;
+  padding: 0;
+  width: calc(32px * 4.2);
+  height: calc(32px * 4.2);
+}
+
+#googleLogo {
+  margin-top: -1.8px;
+}
+
+.socialMediaText {
+  display: flex;
+  margin-top: -80px;
+}
+
+.socialMediaImage {
+  display: flex;
+  flex-direction: row;
+  width: calc(32px * 4);
+  height: calc(32px * 4);
+  gap: 15px;
+  margin: 0;
+  margin-top: 10px;
+}
+
+#facebookLogo {
+  margin: -2px;
+  height: 50px;
+}
+
+#instagramLogo {
+  margin-top: -1px;
+}
+
+#instagramLogo img {
+  height: 3.6em;
+  margin-top: -20px;
+}
+
+.linesContainer {
+    display: flex;
+    background-color: black;
+    position: relative;
+    margin-top: -70px;
+    
+    
+}
+.lines {
+    display: flex;
+    color:white;
+    width: 90%;
+    padding-top: -100px;
+    margin: 0 auto;
+}
+
+.milanCopyright {
+    display: flex;
+    margin-top: 10px;
+    text-align: center;
+    justify-content: center;
+    color: white;
+    background-color: black; 
+}
