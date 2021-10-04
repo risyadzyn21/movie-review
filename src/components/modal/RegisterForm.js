@@ -9,8 +9,10 @@ import {
   Button,
   Modal,
 } from "react-bootstrap";
+import { useForm } from 'react-hook-form'
 
 function RegisterForm({ handleSwitch }) {
+  const { login, handleSubmit } = useForm()
 
   return (
     <>
