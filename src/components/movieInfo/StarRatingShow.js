@@ -1,9 +1,10 @@
 import React,{ useState } from "react";
-import { FaStar } from "react-icons/fa";
+import Rating from '@mui/material/Rating';
+// import { FaStar } from "react-icons";
 import styles from "./StarRating.module.css";
-const StarRating = () => {
-    const [rating,setRating] = useState(null);
-    const [hover,setHover] = useState(null);
+
+const StarRatingShow = () => {
+    const [rating] = useState(4);
     return (
         <div>
             {[...Array(5)].map((star,i) => {
@@ -14,14 +15,12 @@ const StarRating = () => {
                         type="radio" 
                         name="rating" 
                         value={ratingValue} 
-                        onClick={() =>setRating(ratingValue)}
+                        // onClick={() =>setRating(ratingValue)}
                         />
-                        <FaStar 
+                        <Rating 
                         className={styles.star} 
-                        color={ratingValue <= (hover || rating) ? "#ffc107":"e4e5e9"}
-                        size={100} 
-                        onMouseEnter={() => setHover(ratingValue)}
-                        onMouseLeave={() => setHover(null)}
+                        color={ratingValue <= (rating) ? "#ffc107":"e4e5e9"}
+                        size={30} 
                         />
                     </label>
                 );
@@ -31,4 +30,4 @@ const StarRating = () => {
 
 }
 
-export default StarRating;
+export default StarRatingShow;
