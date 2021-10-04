@@ -4,7 +4,7 @@ export const getAllComment = () => {
   return axios.get('https://movieapp-glints.herokuapp.com/api/v1/reviews/share/22')
 }
 
-export function MovieDB(genre) {
+export function MovieDB(page) {
 
   return axios({
     method: 'GET',
@@ -16,6 +16,12 @@ export function MovieDB(genre) {
   })
 }
 
+export function MovieDBGenre(genre) {
+  return axios({
+    method: 'GET',
+    url: `https://movieapp-glints.herokuapp.com/api/v1/movies/${genre}/page/1`
+  })
+}
 
 
 export function MovieDBId(id) {
@@ -42,19 +48,11 @@ export function MovieGenreDB() {
   })
 }
 
-export const Login = (email, password, token) => {
-  const data = {
-    email,
-    password
-  }
+export function MovieSearch(title) {
+
   return axios({
-    method: 'POST',
-    url: 'https://movieapp-glints.herokuapp.com/api/v1/users/signin',
-    headers: {
-      'content-type': 'application/json',
-      "AUTHORIZATION": `Bearer ${token}`
-    },
-    data: JSON.stringify(data)
+    method: 'GET',
+    url: `https://movieapp-glints.herokuapp.com/api/v1/movies/search/${title}`
   })
 }
 

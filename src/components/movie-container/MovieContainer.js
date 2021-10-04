@@ -1,7 +1,7 @@
 import MovieContainerCss from './MovieContainer.module.css'
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Link, NavLink, Route, useParams, useLocation } from 'react-router-dom';
-import { MovieDB, MovieGenreDB } from '../../services';
+import { MovieDB, MovieGenreDB, MovieDBGenre } from '../../services';
 import { Spinner } from 'react-bootstrap'
 
 function MovieContainer() {
@@ -17,13 +17,24 @@ function MovieContainer() {
   // Get All Movies by Genre
 
   useEffect(() => {
+    console.log('tes jalan')
     setIsLoading(true)
-    MovieDB(activeFilter)
-      .then((res) => {
-        setMovies(res.data.data.movies)
-        setIsLoading(false)
-      });
+    if (activeFilter === 'All') {
+      MovieDB()
+        .then((res) => setMovies(res.data.data.movies))
+      setIsLoading(false)
+    } else {
+      MovieDBGenre(activeFilter)
+        .then((res) => {
+
+          setMovies(res.data.data)
+          setIsLoading(false)
+        });
+    }
+
   }, [activeFilter]);
+
+
 
   // Get All Genres Filter
 
@@ -33,6 +44,7 @@ function MovieContainer() {
       .catch((error) => {
         console.log(error)
       })
+
   }, [])
 
 
@@ -41,7 +53,7 @@ function MovieContainer() {
       <span className="visually-hidden" ></span>
     </Spinner>Loading...</div>
 
-  console.log(genres)
+  console.log(movies)
   return (
     <>
       <div className={MovieContainerCss.wrapper}>
@@ -62,7 +74,7 @@ function MovieContainer() {
 
 
         <div className={MovieContainerCss.movieCollection}>
-          {movies.map((movie) => {
+          {movies?.map((movie) => {
             return (
               <Link to={`/movie-detail/${movie.id}`} key={movie.id} className={MovieContainerCss.movieBox}>
                 <img
