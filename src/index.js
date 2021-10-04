@@ -8,12 +8,12 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 
-import userReducer from './redux/reducers'
+import reducer from './redux/reducers'
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
 
 const store = createStore(
-  userReducer,
+  reducer,
   composeEnhancers(applyMiddleware(thunk))
 )
 

@@ -6,7 +6,7 @@ export const getLoginAsync = (email, password) => {
     Login(email, password)
       .then((response) => {
         dispatch(getLoginSuccess(response.data.data))
-        localStorage.setItem('user', response.data.data);
+        localStorage.setItem('token', response.data.data);
       })
   }
 }

@@ -1,6 +1,8 @@
+const token = localStorage.getItem('token') || '';
+
 const initialState = {
-  token: '',
-  userList: []
+  isLoggedIn: false,
+  token
 }
 
 function userReducer(state = initialState, action) {
@@ -14,7 +16,7 @@ function userReducer(state = initialState, action) {
     case 'login/get-success':
       return {
         ...state,
-        login: payload.login,
+        token: action.payload.token,
         loading: false,
         error: ''
       }
