@@ -1,47 +1,26 @@
-import { getAllComment } from "../../services";
+import { Login } from "../../services";
 
-export const getCommentAsync = () => {
-    return (dispatch,getState) => {
-        dispatch({type: 'comments/get-start'});
-        getAllComment()
-        .then((response) => {
-            console.log(response);
-            dispatch(getCommentSuccess(response.data));
-        })
-        .catch((error) => {
-            console.log(error);
-            dispatch(getCommentFailed(error.message));
-        });
-    }
-};
+export const getLoginAsync = (email, password) => {
+  return (dispatch, getState) => {
+    dispatch({ type: 'login/get-start' })
+    Login(email, password)
+      .then((response) => {
+        dispatch(getLoginSuccess(response.data.data))
+        localStorage.setItem('user', response.data.data);
+      })
+  }
+}
 
-export const getCommentSuccess = (comments) => ({
-    type: 'comments/get-succsess',
-    payload: {
-        comments
-    }
-});
+export const getLoginSuccess = (login) => ({
+  type: 'login/get-success',
+  payload: {
+    login
+  }
+})
 
-export const getCommentFailed = (error) => ({
-    type : 'comments/get-failed',
-    payload: {
-        error
-    }
-});
-
-export const arrInput = (obj) => ({
-    type: 'arr/input',
-    payload: {obj}
-   
-  })
-  
-  export const arrComplete = (param) => ({
-    type: 'arr/complete',
-    payload: {param}
-  })
-  
-  export const arrDelete = (param) => ({
-    type: 'arr/delete',
-    payload: {param}
-  })
-  
+export const getLoginFailed = (error) => ({
+  type: 'login/get-failed',
+  payload: {
+    error
+  }
+})

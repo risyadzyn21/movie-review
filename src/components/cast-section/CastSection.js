@@ -17,7 +17,6 @@ function CastSection({ movieId }) {
 
   return (
     <>
-      <h3> Cast Section</h3>
       <div className={CastSectionCss.characterCollection}>
         {cast.map((character) => {
           return (
