@@ -1,51 +1,58 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
-
-* {
-    font-family: 'Roboto', sans-serif;
-    max-width: 100%;
-    z-index: 1;
-  
-}
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap");
 
 .logo {
-    display: block;
-    margin-top: 0;
-    margin-left: 30px;
+  display: block;
+  margin-top: 0;
+  margin-left: 30px;
 }
 
 .logoText {
-    display:block;
-    float: left;
-    margin-left:10px;
+  display: block;
+  float: left;
+  margin-left: 10px;
+  font-weight: bold;
 }
 
 #dflex {
-    display: flex;
-    margin: 3px auto;
-    margin-left:300px;
-    width:500px;
-    height: 40px;
+  display: flex;
+  margin: 3px auto;
+  margin-left: 300px;
+  width: 500px;
+  height: 40px;
 }
 
 .signInLink {
-    display: flex;
-    float:right;
-    margin-right: 150px;
-    margin-top: 3px;
+  display: flex;
+  float: right;
+  margin-right: 150px;
+  margin-top: 2px;
+}
+
+.signInLink a {
+  font-weight: bold;
+  text-decoration: none;
+  color: #7d7d7d;
+  border-radius: 20px;
+}
+
+.signInLink a:hover {
+  border: 2px solid #eb507f;
+  color: #eb507f;
+  transform: scale(1.1);
+  transition: all 0.5s ease;
 }
 
 .avatar {
-    display: flex;
-    float:right;
-    margin-right: 150px;
-    margin-top: 3px;
+  display: flex;
+  float: right;
+  margin-right: 150px;
+  margin-top: 3px;
 }
 #dropdownAvatar {
-    vertical-align: middle;
-    width: 64px;
-    height: 64px;
-    border-radius: 50%;
-    background-color:transparent !important;
-    border:none;
+  vertical-align: middle;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background-color: transparent !important;
+  border: none;
 }
-
