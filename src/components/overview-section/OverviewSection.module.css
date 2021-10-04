@@ -12,6 +12,7 @@
 .synopsis h3 {
   width: 100%;
   position: relative;
+  color: #7d7d7d;
 }
 
 .synopsis h3:after {
@@ -36,6 +37,7 @@
 .movieInfo h3 {
   width: 100%;
   position: relative;
+  color: #7d7d7d;
 }
 
 .movieInfo h3:after {

@@ -6,9 +6,12 @@ import './ModalForm.css'
 import MilanTVLogo from '../../assets/MilanTVLogo.svg';
 import {
   Form,
-  Button,
-  Modal,
+  Button
 } from "react-bootstrap";
+
+
+
+
 
 function LoginForm({ handleSwitch,handleClose }) {
   const [email, setEmail] = useState("");
@@ -58,7 +61,7 @@ function LoginForm({ handleSwitch,handleClose }) {
           />
         </Form.Group>
 
-        <Button className={LoginFormCss.loginBtn} variant="danger" type="submit">
+        <Button className={LoginFormCss.loginBtn} variant="danger" type="submit" disabled={!validateForm()}>
           Log In
         </Button>
         <p className={LoginFormCss.signupIf}>Don’t have an account?
