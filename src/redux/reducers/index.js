@@ -1,34 +1,36 @@
-const token = localStorage.getItem('token') || '';
+import userReducer from "./UserReducer";
+import { combineReducers } from "redux";
 
-const initialState = {
-  isLoggedIn: false,
-  token
-}
+const rootReducer = combineReducers({
+  userReducer,
+});
 
-function userReducer(state = initialState, action) {
-  const { type, payload } = action
-  switch (action.type) {
-    case 'login/get-start':
-      return {
-        ...state,
-        loading: true
-      }
-    case 'login/get-success':
-      return {
-        ...state,
-        token: action.payload.token,
-        loading: false,
-        error: ''
-      }
-    case 'login/get-failed':
-      return {
-        ...state,
-        loading: false,
-        error: payload.error
-      }
-    default:
-      return state
-  }
-}
+export default rootReducer;
 
-export default userReducer
+// const initialStatte = {
+//     comments: [],
+//     loading: false,
+//     error: ''
+// }
+
+// function commentReducer(state = initialStatte, action) {
+//     const { type,payload } = action;
+//     switch(type) {
+//         case 'comments/get-start':
+//             return {
+//                 ...state,
+//                 loading:true
+//             }
+//             case 'comments/get-success':
+//             return {
+//                 ...state,
+//                 comments: payload.comments,
+//                 loading:false,
+//                 error: ''
+//             }
+//             default:
+//                 return state;
+//     }
+// }
+
+// export default commentReducer;

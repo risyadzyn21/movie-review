@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Navbar, Nav, Form, FormControl } from 'react-bootstrap';
 import styles from './navbar.module.css';
 import { Modal } from "react-bootstrap";
-import axios from 'axios';
+import { useSelector } from 'react-redux';
 
 import ModalContainer from '../modal/ModalContainer';
 
@@ -16,11 +16,7 @@ function Navbars() {
   const handleSwitch = (type) => {
     setType(type)
   }
-
-  let token = localStorage.getItem("token")
-
-
-
+  
   return (
     <>
       <div className={styles.Navbar}>
