@@ -33,9 +33,10 @@ function MovieContainer() {
   }, [])
 
 
-  if (isLoading) return <div><Spinner animation="border" role="status">
-    <span className="visually-hidden"></span>
-  </Spinner>Loading...</div>
+  if (isLoading) return <div className={MovieContainerCss.loadingSpinner}>
+    <Spinner animation="grow" role="status">
+      <span className="visually-hidden" ></span>
+    </Spinner>Loading...</div>
 
   return (
     <>
