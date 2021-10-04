@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Navbar, Nav, Form, FormControl } from 'react-bootstrap';
 import styles from './navbar.module.css';
 import { Modal } from "react-bootstrap";
+import { useSelector } from 'react-redux';
 
 import ModalContainer from '../modal/ModalContainer';
 
@@ -15,7 +16,7 @@ function Navbars() {
   const handleSwitch = (type) => {
     setType(type)
   }
-
+  
   return (
     <>
       <div className={styles.Navbar}>

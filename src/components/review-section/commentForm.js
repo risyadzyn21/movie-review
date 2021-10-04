@@ -5,7 +5,7 @@ import styles from "./ReviewSection.module.css";
 import { FaStar } from "@react-icons/all-files/fa/FaStar";
 import axios from "axios";
 
-const TodoForm = ({ saveTodo }) => {
+const TodoForm = ({ saveTodo,addComment }) => {
   const { value, reset, onChange } = useInputState();
   const [rating, setRating] = useState(null);
   const [hover, setHover] = useState(null);
@@ -16,19 +16,20 @@ const TodoForm = ({ saveTodo }) => {
 
   const handleSubmitForm = (e) => {
     e.preventDefault();
+    addComment({rating,comment:value})
 
-    axios({
-      method:"post",
-      url:"https://movieapp-glints.herokuapp.com/api/v1/reviews/3",
-      headers: {
-        Authorization: `Bearer ${token}`,
-        "Content-Type": "application/json"
-      },
-      data: {
-        rating,
-        comment: value
-      },
-    });
+    // axios({
+    //   method:"post",
+    //   url:"https://movieapp-glints.herokuapp.com/api/v1/reviews/3",
+    //   headers: {
+    //     Authorization: `Bearer ${token}`,
+    //     "Content-Type": "application/json"
+    //   },
+    //   data: {
+    //     rating,
+    //     comment: value
+    //   },
+    // });
     
   };
   // (event) => {
