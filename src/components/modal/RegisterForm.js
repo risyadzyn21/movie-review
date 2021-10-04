@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useDispatch } from "react-redux";
 import RegisterFormCss from "./RegisterForm.module.css";
 import "./ModalForm.css";
 import LoginForm from "./LoginForm";
@@ -6,38 +7,27 @@ import { BrowserRouter as Router, Link, Route } from "react-router-dom";
 import MilanTVLogo from "../../assets/MilanTVLogo.svg";
 import { Form, Button, Modal } from "react-bootstrap";
 import axios from "axios";
+import { getRegisterAsync } from "../../redux/actions";
 
-function RegisterForm({ handleSwitch }) {
-  const [values, setValues] = useState({
-    email: "",
-    password: "",
-    fullName: "",
-  });
+function RegisterForm({ handleSwitch,handleClose }) {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [fullName, setFullName] = useState("");
+  const dispatch = useDispatch();
 
-  const handleChange = (e) => {
-    const value = e.target.value;
-    const name = e.target.value;
+  function validateForm() {
+    return fullName.length > 0 && password.length > 0;
+  }
 
-    setValues({ ...values, [name]: value });
-  };
+  async function handleSubmit(event) {
+    event.preventDefault();
+    const response = await dispatch(getRegisterAsync(email, password, fullName))
+    console.log(response, "signUp")
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    axios
-      .post("https://movieapp-glints.herokuapp.com/api/v1/users/signup", {
-        email: values.email,
-        password: values.password,
-        fullName: values.fullName,
-      })
-      .then((res) => {
-        console.log(res);
-        localStorage.setItem("token", JSON.parse(res.data.token));
-      })
-      .catch((err) => {
-        console.error(JSON.stringify(err));
-      });
-  };
+    if(response.status === 200)  {
+      handleClose()
+    }
+  }
 
   return (
     <>
@@ -53,11 +43,10 @@ function RegisterForm({ handleSwitch }) {
           controlId="formFullName"
         >
           <Form.Label>Full Name</Form.Label>
-          <Form.Control className={RegisterFormCss.formControl}
-            type="fullName"
-            name="fullName"
-            value={values.fullName}
-            onChange={handleChange}
+          <Form.Control
+            className={RegisterFormCss.formControl}
+            value={fullName}
+            onChange={(e) => setFullName(e.target.value)}
           />
         </Form.Group>
 
@@ -66,11 +55,11 @@ function RegisterForm({ handleSwitch }) {
           controlId="formEmail"
         >
           <Form.Label>Email</Form.Label>
-          <Form.Control className={RegisterFormCss.formControl}
+          <Form.Control
+            className={RegisterFormCss.formControl}
             type="email"
-            name="email"
-            value={values.email}
-            onChange={handleChange}
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
           />
         </Form.Group>
 
@@ -82,15 +71,15 @@ function RegisterForm({ handleSwitch }) {
           <Form.Control
             className={RegisterFormCss.formControl}
             type="password"
-            name="password"
-            value={values.password}
-            onChange={handleChange}
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
           />
         </Form.Group>
         <Button
           className={RegisterFormCss.signupBtn}
           variant="danger"
           type="submit"
+          disabled={!validateForm()}
         >
           Sign Up
         </Button>

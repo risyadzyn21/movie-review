@@ -7,6 +7,12 @@ import styles from "./ReviewSection.module.css";
 
 const ReviewSection = ({ movieId }) => {
   const { todos, addTodo } = useTodoState([]);
+  
+  const addComment = (value) => {
+    console.log("kesini")
+    // let newArr = todos.concat(value)
+    addTodo(value)
+  }
 
   return (
       // <div></div>
@@ -20,6 +26,7 @@ const ReviewSection = ({ movieId }) => {
       <TodoList todos={todos} />
 
       <TodoForm
+      addComment = {addComment}
         saveTodo={(todoText) => {
           const trimmedText = todoText.trim();
 
