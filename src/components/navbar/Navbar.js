@@ -3,12 +3,25 @@ import { Navbar, Nav, Form, FormControl } from 'react-bootstrap';
 import styles from './navbar.module.css';
 import { Modal } from "react-bootstrap";
 import { useSelector } from 'react-redux';
-
+import axios from 'axios';
+import { MovieSearch } from '../../services';
 import ModalContainer from '../modal/ModalContainer';
+import NavbarUser from './NavbarUser';
 
-function Navbars() {
+function Navbars(props) {
+  const { onSearch } = props
   const [show, setShow] = useState(false);
   const [type, setType] = useState('RegisterForm')
+  const [search, setSearch] = useState('');
+
+  let Token = localStorage.getItem("token")
+
+
+  const handleInput = (e) => {
+    const text = e.target.value
+    setSearch(text)
+  }
+
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -16,7 +29,10 @@ function Navbars() {
   const handleSwitch = (type) => {
     setType(type)
   }
-  
+
+
+
+  console.log(search)
   return (
     <>
       <div className={styles.Navbar}>
@@ -43,10 +59,12 @@ function Navbars() {
               placeholder="search movie"
               className="mr-2"
               aria-label="Search"
+              value={search}
+              onChange={handleInput}
             />
           </Form>
           <div className={styles.signInLink}>
-            <Nav.Link href="#action1" onClick={handleShow} >Sign in</Nav.Link>
+            {Token === null ? <Nav.Link href="#action1" onClick={handleShow} >Sign in</Nav.Link> : <NavbarUser />}
           </div>
 
 
