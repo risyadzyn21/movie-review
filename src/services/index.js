@@ -1,12 +1,12 @@
 import axios from "axios";
 
-export const register = (email,password,fullName) => {
+export const register = (email, password, fullName) => {
   const data = {
     email,
     password,
     fullName
   }
-  
+
   const url = 'https://movieapp-glints.herokuapp.com/api/v1/users/signup';
   return axios({
     method: 'POST',
@@ -18,12 +18,12 @@ export const register = (email,password,fullName) => {
   });
 }
 
-export const login = (email,password) => {
+export const login = (email, password) => {
   const data = {
     email,
     password
   }
-  
+
   const url = 'https://movieapp-glints.herokuapp.com/api/v1/users/signin';
   return axios({
     method: 'POST',
@@ -33,6 +33,13 @@ export const login = (email,password) => {
     },
     data: JSON.stringify(data)
   });
+}
+
+export const loginId = (id) => {
+  return axios({
+    method: 'GET',
+    url: `https://movieapp-glints.herokuapp.com/api/v1/users/getuser/${id}`
+  })
 }
 
 export const getAllComment = () => {

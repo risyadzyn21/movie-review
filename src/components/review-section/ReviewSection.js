@@ -1,13 +1,13 @@
 import React from "react";
 import Typography from "@material-ui/core/Typography";
-
+import TodoForm from './CommentForm'
 import TodoList from "./CommentList";
 import useTodoState from "./useCommentState";
 import styles from "./ReviewSection.module.css";
 
 const ReviewSection = ({ movieId }) => {
   const { todos, addTodo } = useTodoState([]);
-  
+
   const addComment = (value) => {
     console.log("kesini")
     // let newArr = todos.concat(value)
@@ -15,7 +15,7 @@ const ReviewSection = ({ movieId }) => {
   }
 
   return (
-      // <div></div>
+    // <div></div>
     <div className={styles.app}>
       <div className={styles.reviewTitle}>
         <Typography variant="h6" component="h5">
@@ -26,7 +26,7 @@ const ReviewSection = ({ movieId }) => {
       <TodoList todos={todos} />
 
       <TodoForm
-      addComment = {addComment}
+        addComment={addComment}
         saveTodo={(todoText) => {
           const trimmedText = todoText.trim();
 
@@ -34,7 +34,7 @@ const ReviewSection = ({ movieId }) => {
             addTodo(trimmedText);
           }
         }}
-      /> */}
+      />
     </div>
   );
 };
