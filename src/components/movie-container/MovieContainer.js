@@ -1,11 +1,11 @@
 import MovieContainerCss from './MovieContainer.module.css'
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Link, NavLink, Route, useParams, useLocation } from 'react-router-dom';
-import { MovieDB, MovieGenreDB, MovieDBGenre } from '../../services';
+import { MovieDB, MovieGenreDB, MovieDBGenre, MovieSearch } from '../../services';
 import { Spinner } from 'react-bootstrap'
 import Pagination1 from "../../components/pagination/Pagination"
 
-function MovieContainer() {
+function MovieContainer({ search }) {
 
   const location = useLocation()
   const [movies, setMovies] = useState([])
@@ -15,11 +15,10 @@ function MovieContainer() {
   const [meta, setMeta] = useState({})
 
 
-  
+
   // Get All Movies by Genre
 
   useEffect(() => {
-    console.log('tes jalan')
     setIsLoading(true)
     if (activeFilter === 'All') {
       MovieDB()
@@ -46,7 +45,7 @@ function MovieContainer() {
 
   }, [activeFilter]);
 
-console.log("isi meta", meta)
+
 
   // Get All Genres Filter
 
@@ -59,6 +58,12 @@ console.log("isi meta", meta)
 
   }, [])
 
+  useEffect(() => {
+    MovieSearch(search)
+      .then((res) => {
+        console.log(res.data.data)
+      })
+  }, [])
 
   if (isLoading) return <div className={MovieContainerCss.loadingSpinner}>
     <Spinner animation="grow" role="status">

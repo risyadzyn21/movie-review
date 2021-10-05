@@ -38,14 +38,14 @@ function Footer() {
           <ul className={styles.footer3Wrapper}>
             <li>Download</li>
             <li className={styles.downloadImage}>
-              <span id={styles.googleLogo}><img src={googlePlayLogo} alt="Google Play Logo" /> </span>
-              <span><img src={appStoreLogo} alt="Apple Store Logo" /> </span>
+              <a href='https://play.google.com/' id={styles.googleLogo}><img src={googlePlayLogo} alt="Google Play Logo" /> </a>
+              <a href='https://www.apple.com/app-store/'><img src={appStoreLogo} alt="Apple Store Logo" /> </a>
             </li>
             <li className={styles.socialMediaText}>Social media</li>
             <li className={styles.socialMediaImage}>
-              <span id={styles.facebookLogo}><img src={facebookLogo} alt="Facebook Logo" /> </span>
-              <span id={styles.pinterestLogo}><img src={pinterestLogo} alt="Pinterest Logo" /> </span>
-              <span id={styles.instagramLogo}><img src={instagramLogo} alt="Instagram Logo" /> </span>
+              <a href='https://www.facebook.com/' id={styles.facebookLogo}><img src={facebookLogo} alt="Facebook Logo" /> </a>
+              <a href='https://id.pinterest.com/' id={styles.pinterestLogo}><img src={pinterestLogo} alt="Pinterest Logo" /> </a>
+              <a href='https://www.instagram.com/' id={styles.instagramLogo}><img src={instagramLogo} alt="Instagram Logo" /> </a>
             </li>
           </ul>
         </div>
