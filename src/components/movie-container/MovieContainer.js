@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Link, NavLink, Route, useParams, useLocation } from 'react-router-dom';
 import { MovieDB, MovieGenreDB, MovieDBGenre, MovieSearch } from '../../services';
 import { Spinner } from 'react-bootstrap'
-import Pagination1 from "../../components/pagination/Pagination"
+import PaginationPage from "../pagination/PaginationPage"
 
 function MovieContainer({ search }) {
 
@@ -52,9 +52,7 @@ function MovieContainer({ search }) {
   useEffect(() => {
     MovieGenreDB()
       .then((res) => setGenres([{ id: 0, name: 'All' }].concat(res.data.data)))
-      .catch((error) => {
-        console.log(error)
-      })
+
 
   }, [])
 
@@ -100,7 +98,7 @@ function MovieContainer({ search }) {
             );
           })}
         </div>
-        <Pagination1 meta={meta} />
+        <PaginationPage meta={meta} />
       </div>
     </>
   )
