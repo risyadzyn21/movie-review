@@ -58,12 +58,6 @@ function MovieContainer({ search }) {
 
   }, [])
 
-  useEffect(() => {
-    MovieSearch(search)
-      .then((res) => {
-        console.log(res.data.data)
-      })
-  }, [])
 
   if (isLoading) return <div className={MovieContainerCss.loadingSpinner}>
     <Spinner animation="grow" role="status">
